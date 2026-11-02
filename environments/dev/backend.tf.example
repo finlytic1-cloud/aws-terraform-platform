@@ -1,0 +1,16 @@
+# Rename this file to backend.tf AFTER you have applied ../../bootstrap and
+# replaced the bucket name below with the "state_bucket" output.
+#
+# Then run:  terraform init -migrate-state
+#
+# use_lockfile needs Terraform 1.10+ (S3-native state locking, no DynamoDB table required).
+
+terraform {
+  backend "s3" {
+    bucket       = "REPLACE-WITH-state_bucket-OUTPUT"
+    key          = "dev/terraform.tfstate"
+    region       = "eu-west-2"
+    encrypt      = true
+    use_lockfile = true
+  }
+}
