@@ -1,0 +1,6 @@
+project     = "platform-demo"
+region      = "eu-west-2"
+github_repo = "finlytic1-cloud/aws-terraform-platform"
+
+# Set to true only if you need private subnets to reach the internet (costs money).
+enable_nat_gateway = false
